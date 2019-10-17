@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <h3>記事一覧</h3>
+</head>
+<body>
+<div class="contents row" >
+    <% @articles.each do |article| %>
+    <%= render partial: "article", locals: { article: article } %>
+  <% end %>
+  <%= paginate(@articles) %>
+</div>
+<script type="text/javascript" src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<div class="parent">
+  <img <%= article.image %>>
+    <div class="inner">
+      <h5>〜タイトル〜</h5>
+        <p><%= article.title %></p>
+         <h5>〜内容〜</h5>
+          <p><%= article.text %></p>
+         </div>
+        <p></p>
+       </div>
+      <div class="more_list">
+       <% if user_signed_in? && current_user.id == article.user_id %>
+    <li>
+      <%= link_to "編集", "/articles/#{article.id}/edit" %>
+    </li>
+    <li>
+      <%= link_to "削除", "/articles/#{article.id}/", method: :delete %>
+    </li> 
+ <% end %>
+</div>
